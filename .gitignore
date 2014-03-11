@@ -4,5 +4,4 @@
 .tmp
 app/_bower_components
 app/_build
-dist
 node_modules
