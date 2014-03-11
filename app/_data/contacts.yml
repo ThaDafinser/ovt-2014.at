@@ -1,17 +1,17 @@
-- name: Someone
+- name: xxx
   function: his job
   mail: xxx.xxx@example.at
 
-- name: Marina Mathis
-  function: Werbung / Sponsoring
+- name: xxx xxx
+  function: xxx
   mail: xxx.xxx@example.com
 
-- name: Christa Martin
-  function: Bewerb
+- name: xxx xxx
+  function: xxx
   mail: xxx.xxx@example.at
 
-- name: Beate Kollreider
-  function: Bewerb
+- name: xxx xxx
+  function: xxx
   mail: xxx.xxx@example.com
     
 - name: Martin Keckeis
