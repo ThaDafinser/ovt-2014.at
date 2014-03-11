@@ -1,0 +1,34 @@
+name: OVT 2014 Muntlix
+
+markdown: redcarpet
+pygments: true
+permalink: /blog/:year/:month/:day/:title
+
+source: .
+destination: ../dist
+
+gallery:
+  # path to the gallery
+  dir: gallerie
+  
+  # title for gallery index
+  title: "Gallerie - OVT 2014"
+  
+  # title prefix for gallery page. title=title_prefix+gallery_name
+  title_prefix: ""
+  
+  # field to control sorting of galleries for the index page
+  # (possible values are: title, date_time, best_image)
+  sort_field: "date_time"
+  
+  # sizes for thumbnails
+  thumbnail_size:
+    x: 400
+    y: 400
+    
+  # custom configuration for individual gallery
+  # best_image is image for the index page (defaults to last image)
+  galleries:
+    first:
+      best_image: DSC_2422.jpg
+  

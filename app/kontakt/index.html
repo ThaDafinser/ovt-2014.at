@@ -1,0 +1,17 @@
+--- 
+layout: default 
+title: Kontakt - OVT 2014
+---
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <h1><small>dIE</small> Kontakte</h1>
+    <p>
+    	Sie haben noch Fragen? Nehmen sie Kontakt mit uns auf!
+    </p>
+</div>
+
+{% for contact in site.data.contacts %}
+	<h3>{{ contact.function }}</h3>
+	{{ contact.name }} - <a href="mailto:{{ contact.mail }}">{{ contact.mail }}</a>
+{% endfor %}

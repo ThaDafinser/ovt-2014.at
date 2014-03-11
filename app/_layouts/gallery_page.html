@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+	<h1><small>dIE</small> Gallerie</h1>
+    <h3>{{ page.title }}</h3>
+</div>
+
+<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+	<div class="col-md-12 text-center">
+		<a class="btn btn-primary" href="/{{ site.gallery.dir }}""><span class="glyphicon glyphicon-list"></span> Zurück für Übersicht</a>
+	</div>
+</div>
+
+<div class="row">
+{% for image in page.images %}
+
+	
+	<div class="col-xs-6 col-md-3">
+    	<a href="{{ image }}" class="thumbnail" data-lightbox="roadtrip"><img class="gallery-image" src="thumbs/{{ image }}" /></a>
+    </div>
+    
+   	{% assign loopindex = forloop.index | modulo: 4 %}
+	{% if loopindex == 0 %}
+		</div><div class="row">
+	{% endif %}
+    
+{% endfor %}
+</div>
+
+<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+	<div class="col-md-12 text-center">
+		<a class="btn btn-primary" href="/{{ site.gallery.dir }}""><span class="glyphicon glyphicon-list"></span> Zurück für Übersicht</a>
+	</div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.fancybox').fancybox();
+    });
+</script>

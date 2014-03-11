@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<title>{{ page.title }}</title>
+	
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+  
+	<!-- build:css /assets/css/vendor.css -->
+	<link href="/assets/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link href="/assets/css/lightbox2/lightbox.css" type="text/css" rel="stylesheet" />
+	<!-- endbuild -->
+	
+	<!-- build:css /assets/css/custom.css -->
+	<link href="/assets/css/template.css" type="text/css" rel="stylesheet" />
+	<link href="/assets/css/syntax.css" type="text/css" rel="stylesheet" />
+	<!-- endbuild -->
+	
+	<link href="/css/template.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Navigation ein/ausblenden</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">OVT - 2014</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				
+					{% assign current = page.url | split: '/' %}
+					
+					{% if page.url == '/index.html' %}
+						<li class="active"><a href="/">Home</a></li>
+					{% else  %}
+						<li><a href="/">Home</a></li>
+					{% endif  %}
+					
+					{% if current[1] == 'blog' %}
+						<li class="active"><a href="/blog">Blog</a></li>
+					{% else  %}
+						<li><a href="/blog">Blog</a></li>
+					{% endif  %}
+					
+					{% if current[1] == 'programm' %}
+						<li class="active"><a href="/programm">Programm</a></li>
+					{% else  %}
+						<li><a href="/programm">Programm</a></li>
+					{% endif  %}
+					
+					{% if current[1] == 'bewerb' %}
+						<li class="active"><a href="/bewerb">Bewerb</a></li>
+					{% else  %}
+						<li><a href="/bewerb">Bewerb</a></li>
+					{% endif  %}
+					
+					{% if current[1] == 'sponsoren' %}
+						<li class="active"><a href="/sponsoren">Sponsoren</a></li>
+					{% else  %}
+						<li><a href="/sponsoren">Sponsoren</a></li>
+					{% endif  %}
+					
+					{% if current[1] == 'gallerie' %}
+						<li class="active"><a href="/gallerie">Gallerie</a></li>
+					{% else  %}
+						<li><a href="/gallerie">Gallerie</a></li>
+					{% endif  %}
+					
+					{% if current[1] == 'kontakt' %}
+						<li class="active"><a href="/kontakt">Kontakt</a></li>
+					{% else  %}
+						<li><a href="/kontakt">Kontakt</a></li>
+					{% endif  %}
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+	
+		{{ content }}
+		
+		<hr />
+		
+		<!-- Team anmelden -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+   			  <form id="formContact" class="form-horizontal" role="form" action="mailto:xxx@example.com" method="get">
+   			  
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-user"></span> Team anmelden</h4>
+		      </div>
+		      <div class="modal-body">
+
+
+				<div class="alert alert-info alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Wichtig!</strong> Die Anmeldung ist erst gültig, nachdem die Startgebühr bezahlt wurde!
+				</div>
+				
+				<input type="hidden" name="subject" value="[OVT-2014] Anmeldung Team" />
+				<input type="hidden" name="body" id="inputBody" value="" />
+				
+				<fieldset>
+					<legend>Team</legend>
+					
+					<div class="form-group">
+						<label for="inputTeamname" class="col-sm-2 control-label">Teamname</label>
+						<div class="col-sm-10">
+							<input type="text" required="required" class="form-control" id="inputTeamname" placeholder="z.B. Feuerwehr 1, Die Wilden, ...">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="inputCompany" class="col-sm-2 control-label">Verein/Firma</label>
+						<div class="col-sm-10">
+							<input type="text" required="required" class="form-control" id="inputCompany" placeholder="z.B. Feuerwehr Zwischenwasser, Firobad, ..." />
+						</div>
+					</div>
+				</fieldset>
+				
+				<fieldset>
+					<legend>Ansprechpartner</legend>
+				
+					<div class="form-group">
+						<label for="inputPerson" class="col-sm-2 control-label">Ansprechpartner</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputPerson" placeholder="Vorname + Nachname">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="inputPerson" class="col-sm-2 control-label">E-Mail</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputPerson" placeholder="z.B. vn.nn@example.com">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="inputPerson" class="col-sm-2 control-label">Telefon</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputPerson" placeholder="z.B. +43 664 12345678">
+						</div>
+					</div>
+  				</fieldset>
+				
+				<div class="alert alert-success">
+					<h3>Kontodaten</h3>
+					<strong>IBAN</strong> xxxxx<br />
+					<strong>BIC</strong> xxx<br />
+					<br />
+					<strong>Betreff</strong> OVT-2014 [TEAMNAME]
+				</div>
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+		        <button type="submit" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-send"></span> Senden</button>
+		      </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+
+		<footer>
+			<p>
+				&copy; HM-Muntlix 2014
+			</p>
+		</footer>
+	</div>
+	
+	<!-- build:js /assets/js/vendor.js -->
+	<script src="/assets/js/jquery/jquery.js" type="text/javascript"></script>
+
+	<script src="/assets/js/bootstrap/transition.js"></script>
+	<script src="/assets/js/bootstrap/alert.js"></script>
+	<script src="/assets/js/bootstrap/button.js"></script>
+	<script src="/assets/js/bootstrap/carousel.js"></script>
+	<script src="/assets/js/bootstrap/collapse.js"></script>
+	<script src="/assets/js/bootstrap/dropdown.js"></script>
+	<script src="/assets/js/bootstrap/modal.js"></script>
+	<script src="/assets/js/bootstrap/tooltip.js"></script>
+	<script src="/assets/js/bootstrap/popover.js"></script>
+	<script src="/assets/js/bootstrap/scrollspy.js"></script>
+	<script src="/assets/js/bootstrap/tab.js"></script>
+	<script src="/assets/js/bootstrap/affix.js"></script>
+	
+	<script src="/assets/js/lightbox2/lightbox.js"></script>
+	
+	<script src="/assets/js/holder/holder.js"></script>
+	<!-- endbuild -->
+	
+	<script>
+	$('#myModal').on('shown.bs.modal', function () {
+	    $('#inputTeamname').focus();
+	});
+
+	$('#formContact').submit(function(){
+	    var bodyValue = '';
+	    
+	    bodyValue += 'Verein/Firma: ' + $('#inputCompany').val() + '\r\n';
+	    bodyValue += 'Teamname: ' + $('#inputTeamname').val() + '\r\n';
+	    bodyValue += 'Ansprechpartner: ' + $('#inputPerson').val() + '\r\n';
+	    
+	    $('#inputBody').val(bodyValue);
+	});
+	</script>
+	
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>	
+	<script type="text/javascript">stLight.options({publisher: "7cf41621-9b62-4266-a908-2607ce643b6f", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+	<script>
+	var options={ "publisher": "7cf41621-9b62-4266-a908-2607ce643b6f", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "googleplus", "twitter", "linkedin", "email"]}};
+	var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+	</script>
+</body>
+</html>

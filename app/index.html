@@ -1,0 +1,88 @@
+--- 
+layout: default 
+title: OVT 2014
+---
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <h1>OVT 2014 <small> vom 20. - 22. Juni, in Muntlix</small></h1>
+    <p>
+    	Melden sie ihr Vereins -oder Firmenteam noch heute an, um einen Startplatz zu sichern!
+    </p>
+    <p>
+    	<button class="btn btn-lg btn-primary" data-toggle="modal" data-target="#myModal">
+    	Jetzt ihr Team anmelden &raquo;
+    	</button>
+    	<a href="/bewerb" class="btn btn-link">
+    		Mehr Infos zum Bewerb
+    	</a>
+	</p>
+</div>
+
+ <!-- Example row of columns -->
+ <div class="row">
+	 <div class="col-md-4">
+		<h2>Freitag <small>Tracht &amp; Leder</small></h2>
+		<p>
+			Getreu dem Motto wird es am Freitag Abend "zünftig" zugehen.<br />
+			Für Unterhaltung ist gesorgt durch 
+		</p>
+			<ul>
+				<li>Jungmusik Muntlix-Sulz</li>
+				<li>Musikverein Laterns</li>
+				<li>Schuhplattler</li>
+				<li>bö-mix</li>
+			</ul>
+			
+			<hr />
+		<p>
+			<strong>Beginn</strong> 19:30 Uhr<br />
+			<strong>Eintritt</strong> <span class="label label-success">Frei</span><br />
+		</p>
+		<br />
+		<p><a class="btn btn-default" href="/programm" role="button">Mehr erfahren &raquo;</a></p>
+	</div>
+	<div class="col-md-4">
+		<h2>Samstag <small>Bewerbtag + Partyabend</small></h2>
+		<p>
+			Spannende Wettkämpfe in unterschiedlichen Disziplinen: <strong>Fußball, Beachvolleyball und Geschicklichkeit</strong><br />
+			<br />
+			Am Abend dann der <strong>Nebenwettbewerb</strong> und super Stimmung mit der <strong>Partyband Zündstoff</strong><br />
+		</p>
+		
+		<hr />
+		
+		<p>
+			<strong>Beginn Bewerbe</strong> ca.10:00 Uhr<br />
+			<strong>Beginn Partyabend</strong> 19:00 Uhr<br />
+			<strong>Eintritt</strong> <span class="label label-success">Frei</span>
+		 </p>
+		<br />
+		<p><a class="btn btn-default" href="/programm" role="button">Mehr erfahren &raquo;</a></p>
+	</div>
+	<div class="col-md-4">
+		<h2>Sonntag <small>Finaltag + Frühshoppen</small></h2>
+		<p>
+			Neben den spannenden Finalspielen, wird es ebenfalls einen Frühshoppen mit dem <strong>Schützenmusikverein Sulz</strong> geben
+		</p>
+		
+		<hr />
+		
+		<p>
+			<strong>Beginn</strong> 11:00 Uhr<br />
+			<strong>Eintritt</strong> <span class="label label-success">Frei</span>
+		</p>
+		<br />
+		<p><a class="btn btn-default" href="/programm" role="button">Mehr erfahren &raquo;</a></p>
+	</div>
+</div>
+
+<hr class="featurette-divider">
+
+<h1>News</h1>
+{% for post in site.posts %}
+	<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+	{{ post.excerpt }}
+	<a href="{{ post.url }}" class="btn btn-default">Mehr lesen &raquo;</a>
+	<hr />
+{% endfor %}

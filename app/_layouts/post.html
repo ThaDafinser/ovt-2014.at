@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <h1><small>dER</small> Blog</h1>
+    <h3>{{ page.title }} <small>{{ page.date | date_to_string }}</small></h3>
+</div>
+
+<div class="post">
+{{ content }}
+</div>
+
+<hr />
+
+<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+	<div class="col-md-4 text-left">
+		{% if page.previous %} 
+			<a class="btn btn-default" href="{{ page.previous.url }}" title="{{ page.previous.title }}"><span class="glyphicon glyphicon-chevron-left"></span> Vorheriger Eintrag</a>
+		{% else %}
+			 <a class="btn btn-default disabled" href="#"><span class="glyphicon glyphicon-chevron-left"></span> Vorheriger Eintrag</a>
+		{% endif %} 
+	</div>
+	
+	<div class="col-md-4 text-center">
+		<a class="btn btn-primary" href="/blog"><span class="glyphicon glyphicon-list"></span> Zurück für Übersicht</a>
+	</div>
+	
+	<div class="col-md-4 text-right">
+		{% if page.next %} 
+			<a class="btn btn-default"  href="{{ page.next.url }}" title="{{ page.next.title }}">Nächster Eintrag <span class="glyphicon glyphicon-chevron-right"></span></a>
+		{% else %}
+			<a class="btn btn-default disabled" href="#">Nächster Eintrag <span class="glyphicon glyphicon-chevron-right"></span></a>
+		{% endif %} 
+	</div>
+</div>

@@ -1,0 +1,19 @@
+- name: Someone
+  function: his job
+  mail: xxx.xxx@example.at
+
+- name: Marina Mathis
+  function: Werbung / Sponsoring
+  mail: xxx.xxx@example.com
+
+- name: Christa Martin
+  function: Bewerb
+  mail: xxx.xxx@example.at
+
+- name: Beate Kollreider
+  function: Bewerb
+  mail: xxx.xxx@example.com
+    
+- name: Martin Keckeis
+  function: Website
+  mail: xxx.xxx@example.com
