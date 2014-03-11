@@ -2,6 +2,4 @@
 .project
 .settings
 .tmp
-app/_bower_components
-app/_build
 node_modules
